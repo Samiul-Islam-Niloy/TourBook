@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TourBook_V9.Models.CreateEvent>
+
+@{
+    ViewBag.Title = "Search";
+}
+@Html.AntiForgeryToken()
+
+<h2>Search</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Start_from)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_member)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventCreator)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start_from)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Days)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_member)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventCreator)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+            </td>
+        </tr>
+    }
+
+</table>

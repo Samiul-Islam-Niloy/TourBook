@@ -1,0 +1,454 @@
+﻿@model TourBook_V9.Models.SubscribeModel
+
+@{
+    ViewBag.Title = "Homepage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="text" name="txtsearch" value=" " />
+        <input type="submit" name="btnsubmit" value="submit" />
+    }*@
+
+
+<!-- header , CSS, Jscripts for navigation-->
+
+<style>
+
+    .nav-item > .nav-link {
+        color: black !important;
+    }
+
+    .logo {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+
+    .content-banner .first-title {
+        font-size: 30px !important;
+    }
+
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: transparent;
+    }
+
+    .logo {
+        color: #ffffff;
+    }
+
+    .nav-item .nav-link {
+        display: block;
+        line-height: 36px;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 500;
+        color: hsl(0, 88%, 67%);
+        transition: 0.15s;
+    }
+
+        .nav-item .nav-link:hover {
+            color: #094b2a;
+        }
+
+    .header-btn {
+        color: white;
+        border-radius: 30px;
+        background-color: gray;
+        border: none;
+        font-weight: 500;
+        outline: none;
+        font-size: 15px;
+        padding: 7px 22px;
+        transition: 0.5s;
+    }
+
+        .header-btn:hover {
+            background-color: #fe4066;
+            cursor: pointer;
+        }
+
+    .navbar-scroll {
+        background-color: #ffffff;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+        transition-duration: 0.6s;
+    }
+
+        .navbar-scroll .nav-item .nav-link {
+            color: black;
+        }
+
+        .navbar-scroll .header-btn {
+            color: #0c0b0b;
+            background-color: #fe4066;
+        }
+
+        .navbar-scroll .logo {
+            color: #000;
+            font-weight: 500;
+        }
+
+    .first-title {
+        text-transform: capitalize;
+    }
+
+    section {
+        background-color: white;
+        padding: 4rem 0rem 4rem;
+    }
+
+        section:nth-of-type(even) {
+            background-color: #fe4066;
+            color: white;
+        }
+</style>
+
+<div style="justify-content:right">
+
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="text" name="txtsearch" value=" " />
+        <input type="submit" name="btnsubmit" value="Search" />
+    }
+</div>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous" />
+
+<!--fontawesome-->
+<link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous" />
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var navbar = $(".header-inner");
+        $(window).scroll(function () {
+            if ($(window).scrollTop() <= 40) {
+                navbar.removeClass("navbar-scroll");
+            } else {
+                navbar.addClass("navbar-scroll");
+            }
+        });
+    })
+</script>
+
+<!-- header , CSS, Jscripts for navigation ends-->
+<!-- navbar html starts-->
+<body style=" background-image: url('../../img/img6.jpg'); opacity:1" class="img-fluid">
+
+    <div class="img-fluid">
+
+
+        <header class="header" style="margin-bottom:120px">
+            <div class="header-inner">
+                <div class="container-fluid px-lg-5">
+                    <nav class="navbar navbar-expand-lg my-navbar">
+                        <a class="navbar-brand" href="#">
+                            <span class="logo">
+                                <img src=""
+                                     class="img-fluid"
+                                     style="width: 30px; margin: -3px 0px 0px 0px" />Tour Book
+                            </span>
+                        </a>
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <i class="fas fa-bars" style="margin: 5px 0px 0px 0px"></i>
+                            </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav m-auto">
+                                @*<li class="nav-item active">
+                                        <a class="nav-link" href="#"> Friends <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Event History</a>
+                                    </li>*@
+                                <!--
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                       href="#"
+                                       id="navbarDropdown"
+                                       role="button"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true"
+                                       aria-expanded="false">
+                                        Pricing
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                    -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"></a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <a href="@Url.Action("Logout","Home")" class="header-btn my-2 my-sm-0">Logout</a>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+        <!-- navbar html ends-->
+
+        <div class="row justify-content-md-start" style=" margin-top: -100px">
+
+            <div class="col-md-4">
+                <div class="card" style="        background-color: #ebdfe5
+">
+                    <div class="card-header">
+                        Welcome
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+
+                        {
+                            @*@Html.TextBoxFor(model => model.srch)
+                                @Html.ValidationMessageFor(model => model.srch)
+                                <button type="Search"></button>*@
+
+                        }
+                        @*<li>
+                                @Html.Label("Search for location")
+                                @Html.TextBox("srch")
+                            </li>*@
+
+                        @if (Session["FullName"] != null)
+                        {
+
+
+
+
+
+                            <p>Name: @Session["FullName"].ToString()</p>
+                            <p>Email: @Session["Email"].ToString()</p>
+                            @*<a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                                <a href="@Url.Action("Create","Event")" class="btn btn-warning">Create Event</a>
+                                <a href="@Url.Action("Notification","Event")" class="btn btn-warning">See Notifications</a>
+                                <a href="@Url.Action("Search","Event")" class="btn btn-warning">Search</a>
+                                <a href="@Url.Action("Homepage","Event")" class="btn btn-warning">Homepage</a>*@
+
+
+
+                            <!--<form>
+                            <input id="userInput" name="firstName">-->
+                            @*<button id='add'>Add to local storage</button>*@
+                            <!--<a href="@Url.Action("Search","Event")" class="btn btn-warning" id="add">Search</a>
+                            </form>
+                            <script>
+                                var inputTest = document.getElementById('userInput');
+
+                                document.getElementById('add').addEventListener('click', store_data);  //Button Click Listener.
+
+                                inputTest.addEventListener('keypress', function (key) {  // Enter key Press Listener
+                                    key.which = key.which || key.keyCode;
+                                    if (key.which == 13) {
+                                        store_data();
+                                    }
+                                });
+
+                                function store_data() { // Store value from input field to local store
+                                    localStorage.setItem('objectToPass', inputTest.value);
+                                }
+                            </script>-->
+
+
+
+
+
+
+
+                            @*<input type=button class="btn btn-warning" onClick="parent.open('https://appchat026.netlify.app/')"
+                                value='Send Message'>*@
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-4">
+                <div class="card" style="        background-color: #ebe6e8
+">
+                    <div class="card-header">
+                        Here's what you can do
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+
+                        {
+                            @*@Html.TextBoxFor(model => model.srch)
+                                @Html.ValidationMessageFor(model => model.srch)
+                                <button type="Search"></button>*@
+
+                        }
+                        @*<li>
+                                @Html.Label("Search for location")
+                                @Html.TextBox("srch")
+                            </li>*@
+
+                        @if (Session["FullName"] != null)
+                        {
+
+
+
+
+
+                            @*<p>Name: @Session["FullName"].ToString()</p>
+                                <p>Email: @Session["Email"].ToString()</p>*@
+
+                            <div class="row" style="margin-bottom:30px; justify-content:center">
+                                <a href="@Url.Action("Homepage","Event")" class="btn btn-outline-dark">Event Feed</a>
+                                <a href="@Url.Action("Create","Event")" class="btn btn-outline-dark" style="margin-left:10px">Create Event</a>
+                            </div>
+
+
+                            <div class="row" style="margin-bottom:30px; justify-content:center">
+
+                                <a href="@Url.Action("Notification","Event")" class="btn btn-outline-dark">See Notifications</a>
+                                <a href="@Url.Action("Search","Event")" class="btn btn-outline-dark" style="margin-left:10px">Search</a>
+                                <a href="@Url.Action("info","Event")" class="btn btn-outline-dark" style="margin-left:10px">Show Info</a>
+                            </div>
+                            <div class="row" style="margin-bottom:30px; justify-content:center">
+                                <input type=button class="btn btn-outline-dark" onClick="parent.open('https://appchat026.netlify.app/')"
+                                       value='Send Message'>
+                            </div>
+
+
+                            <div class="row" style="margin-bottom:30px; justify-content:center">
+                                <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                            </div>
+
+
+
+
+
+                            <!--<form>
+                            <input id="userInput" name="firstName">-->
+                            @*<button id='add'>Add to local storage</button>*@
+                            <!--<a href="@Url.Action("Search","Event")" class="btn btn-warning" id="add">Search</a>
+                            </form>
+                            <script>
+                                var inputTest = document.getElementById('userInput');
+
+                                document.getElementById('add').addEventListener('click', store_data);  //Button Click Listener.
+
+                                inputTest.addEventListener('keypress', function (key) {  // Enter key Press Listener
+                                    key.which = key.which || key.keyCode;
+                                    if (key.which == 13) {
+                                        store_data();
+                                    }
+                                });
+
+                                function store_data() { // Store value from input field to local store
+                                    localStorage.setItem('objectToPass', inputTest.value);
+                                }
+                            </script>-->
+
+
+
+
+
+
+
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <script>
+        var inputTest = document.getElementById('userInput');
+
+        document.getElementById('add').addEventListener('click', store_data);  //Button Click Listener.
+
+        inputTest.addEventListener('keypress', function (key) {  // Enter key Press Listener
+            key.which = key.which || key.keyCode;
+            if (key.which == 13) {
+                store_data();
+            }
+        });
+
+        function store_data() { // Store value from input field to local store
+            localStorage.setItem('objectToPass', inputTest.value);
+        }
+    </script>
+</body>

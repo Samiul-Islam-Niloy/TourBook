@@ -1,0 +1,418 @@
+﻿@model TourBook_V9.Models.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- header , CSS, Jscripts for navigation-->
+
+<style>
+
+    .nav-item > .nav-link {
+        color: black !important;
+    }
+
+    .logo {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+
+    .content-banner .first-title {
+        font-size: 30px !important;
+    }
+
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: transparent;
+    }
+
+    .logo {
+        color: #ffffff;
+    }
+
+    .nav-item .nav-link {
+        display: block;
+        line-height: 36px;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 500;
+        color: hsl(0, 88%, 67%);
+        transition: 0.15s;
+    }
+
+        .nav-item .nav-link:hover {
+            color: #094b2a;
+        }
+
+    .header-btn {
+        color: white;
+        border-radius: 30px;
+        background-color: gray;
+        border: none;
+        font-weight: 500;
+        outline: none;
+        font-size: 15px;
+        padding: 7px 22px;
+        transition: 0.5s;
+    }
+
+        .header-btn:hover {
+            background-color: #fe4066;
+            cursor: pointer;
+        }
+
+    .navbar-scroll {
+        background-color: #ffffff;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+        transition-duration: 0.6s;
+    }
+
+        .navbar-scroll .nav-item .nav-link {
+            color: black;
+        }
+
+        .navbar-scroll .header-btn {
+            color: #0c0b0b;
+            background-color: #fe4066;
+        }
+
+        .navbar-scroll .logo {
+            color: #000;
+            font-weight: 500;
+        }
+
+    .first-title {
+        text-transform: capitalize;
+    }
+
+    section {
+        background-color: white;
+        padding: 4rem 0rem 4rem;
+    }
+
+        section:nth-of-type(even) {
+            background-color: #fe4066;
+            color: white;
+        }
+</style>
+
+
+
+<meta charset="utf-8" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous" />
+
+<!--fontawesome-->
+<link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous" />
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var navbar = $(".header-inner");
+        $(window).scroll(function () {
+            if ($(window).scrollTop() <= 40) {
+                navbar.removeClass("navbar-scroll");
+            } else {
+                navbar.addClass("navbar-scroll");
+            }
+        });
+    });
+</script>
+
+<!-- header , CSS, Jscripts for navigation ends-->
+
+
+<body class="img-fluid" style="background-image: url('../../img/img3.jpg');">
+
+    <!-- navbar html starts-->
+
+
+    <header class="header" style="margin-bottom:120px">
+        <div class="header-inner">
+            <div class="container-fluid px-lg-5">
+                <nav class="navbar navbar-expand-lg my-navbar">
+                    <a class="navbar-brand" href="#">
+                        <span class="logo">
+                            <img src=""
+                                 class="img-fluid"
+                                 style="width: 30px; margin: -3px 0px 0px 0px" />Tour Book
+                        </span>
+                    </a>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <i class="fas fa-bars" style="margin: 5px 0px 0px 0px"></i>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <!--
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                       href="#"
+                                       id="navbarDropdown"
+                                       role="button"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true"
+                                       aria-expanded="false">
+                                        Pricing
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                    -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <a href="@Url.Action("Login","Home")" class="header-btn my-2 my-sm-0">Login</a>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- navbar html ends-->
+
+
+    <div class="row justify-content-md-center">
+
+        <div style="background-color: #3f4541; width: 300px; height:200px; margin-left: -800px;  border-radius:25px; position:absolute">
+            <h1 style="text-align: left; margin-left: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: aliceblue;
+        margin-top: 20px">
+                Tour Book
+            </h1>
+            <p style="text-align: left; margin-left:20px; color:white; padding-right:5px">
+                Register to Join the most vibrant travelling community
+            </p>
+        </div>
+
+
+
+        <div class="col-md-6" style=" width: 600px;  margin-top: 10px; border-radius: 25px; ">
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+            {
+                //@Html.ValidationSummary()
+                @Html.AntiForgeryToken()
+
+                <div class="card" style="background-color: #faf7e1; border-radius:25px">
+                    <div class="card-header">
+                        <div class="card-title">Register</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FirstName)
+                                @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" })
+                                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "badge badge-danger" })
+                            </div>
+                            <div class="form-group" style="padding-left:30px; justify-content:right !important">
+                                @Html.LabelFor(m => m.LastName)
+                                @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", @placeholder = "Last Name" })
+                                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "badge badge-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                                @if (ViewBag.error != null)
+                                {
+                                    <span class="badge badge-danger">@ViewBag.error</span>
+                                }
+                            </div>
+
+
+                            <div class="form-group" style="padding-left:30px">
+                                @Html.LabelFor(m => m.mobile)
+                                @Html.TextBoxFor(m => m.mobile, "", new { @class = "form-control", @placeholder = "Your Mobile Number" })
+                                @Html.ValidationMessageFor(m => m.mobile, "", new { @class = "badge badge-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.location)
+                                @Html.TextBoxFor(m => m.location, "", new { @class = "form-control", @placeholder = "Location" })
+                                @Html.ValidationMessageFor(m => m.location, "", new { @class = "badge badge-danger" })
+
+                            </div>
+                            <div class="form-group" style="padding-left:30px">
+                                @Html.LabelFor(m => m.dob)
+                                @Html.TextBoxFor(m => m.dob, "", new { @class = "form-control", @placeholder = "Date of Birth" })
+                                @Html.ValidationMessageFor(m => m.dob, "", new { @class = "badge badge-danger" })
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.marital)
+                                @Html.TextBoxFor(m => m.marital, "", new { @class = "form-control", @placeholder = "Marital Status" })
+                                @Html.ValidationMessageFor(m => m.marital, "", new { @class = "badge badge-danger" })
+
+                            </div>
+
+                            <div class="form-group" style="padding-left:30px">
+                                @Html.LabelFor(m => m.gender)
+                                @Html.TextBoxFor(m => m.gender, "", new { @class = "form-control", @placeholder = "Gender" })
+                                @Html.ValidationMessageFor(m => m.gender, "", new { @class = "badge badge-danger" })
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.bio)
+                                @Html.TextBoxFor(m => m.bio, "", new { @class = "form-control", @placeholder = "Short bio about yourself" })
+                                @Html.ValidationMessageFor(m => m.bio, "", new { @class = "badge badge-danger" })
+
+                            </div>
+
+                            <div class="form-group" style="padding-left:30px">
+                                @Html.LabelFor(m => m.REvent)
+                                @Html.TextBoxFor(m => m.REvent, "", new { @class = "form-control", @placeholder = "Recent Event" })
+                                @Html.ValidationMessageFor(m => m.REvent, "", new { @class = "badge badge-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
+                            </div>
+                            <div class="form-group" style="padding-left:30px">
+                                @Html.LabelFor(m => m.ConfirmPassword)
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Retype Your Password" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-success" value="Register" />
+                        </div>
+                        <div class="form-group">
+                            <a href="@Url.Action("Login","Home")" class="btn btn-outline-dark">Already Have an Account? Login Here</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid" style=" justify-content:center; padding-left:30px ;width: 550px; margin-top: 10px; border-radius: 25px; background-color: #faf7e1; padding-top:30px; padding-bottom:30px">
+
+
+        <form action="https://formspree.io/f/moqyawdw" method="POST" id="my-form">
+            <h3>Register here for Chatting</h3>
+
+            <div class="form-group" style="padding-top:10px">
+                <label for="firstName"> User Name</label>
+                <input type="text" id="firstName" name="firstName" style="margin-left:8px">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" style="margin-left:20px">
+            </div>
+
+
+
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    var form = document.getElementById("my-form");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+        }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
